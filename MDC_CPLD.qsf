@@ -1,0 +1,660 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2020  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 20.1.0 Build 711 06/05/2020 SJ Standard Edition
+# Date created = 09:46:29  June 24, 2021
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		MDC_CPLD_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX 10"
+set_global_assignment -name DEVICE 10M16SCU169I7G
+set_global_assignment -name TOP_LEVEL_ENTITY MDC_CPLD_Top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:46:29  JUNE 24, 2021"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Standard Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_location_assignment PIN_J8 -to ALTLED0
+set_location_assignment PIN_M10 -to ALTLED1
+set_location_assignment PIN_N3 -to CPLD_MCU_SP0
+set_location_assignment PIN_G9 -to CPLD_MCU_SP1
+set_location_assignment PIN_G10 -to CPLD_MCU_SP2
+set_location_assignment PIN_B9 -to CPLD_nReset
+set_location_assignment PIN_H6 -to FPGA_CLK0
+set_location_assignment PIN_H4 -to FPGA_CLK1
+set_location_assignment PIN_N5 -to I2C1_SCL
+set_location_assignment PIN_N6 -to I2C1_SDA
+set_location_assignment PIN_L2 -to PHY_0P8V_EN_0
+set_location_assignment PIN_M3 -to PHY_0P8V_EN_1
+set_location_assignment PIN_K1 -to PHY_0P8V_EN_2
+set_location_assignment PIN_J2 -to PHY_1P5V_EN
+set_location_assignment PIN_M1 -to PHY_2P0V_EN
+set_location_assignment PIN_J1 -to PHY_2P5V_EN
+set_location_assignment PIN_D1 -to PHY0_MDC
+set_location_assignment PIN_C2 -to PHY0_MDIO
+set_location_assignment PIN_E4 -to PHY0_NINT
+set_location_assignment PIN_C1 -to PHY0_NRST
+set_location_assignment PIN_H2 -to PHY0_RX_LOS
+set_location_assignment PIN_F1 -to PHY0_SCL
+set_location_assignment PIN_E1 -to PHY0_SDA
+set_location_assignment PIN_G4 -to PHY0_TX_DISABLE
+set_location_assignment PIN_F4 -to PHY0_TX_FAULT
+set_location_assignment PIN_K10 -to PHY1_MDC
+set_location_assignment PIN_K11 -to PHY1_MDIO
+set_location_assignment PIN_L12 -to PHY1_NINT
+set_location_assignment PIN_K12 -to PHY1_NRST
+set_location_assignment PIN_H9 -to PHY1_RX_LOS
+set_location_assignment PIN_J12 -to PHY1_SCL
+set_location_assignment PIN_J9 -to PHY1_SDA
+set_location_assignment PIN_H13 -to PHY1_TX_DISABLE
+set_location_assignment PIN_H10 -to PHY1_TX_FAULT
+set_location_assignment PIN_F12 -to PHY2_MDC
+set_location_assignment PIN_E12 -to PHY2_MDIO
+set_location_assignment PIN_F8 -to PHY2_NINT
+set_location_assignment PIN_B12 -to PHY2_NRST
+set_location_assignment PIN_E10 -to PHY2_RX_LOS
+set_location_assignment PIN_B11 -to PHY2_SCL
+set_location_assignment PIN_C12 -to PHY2_SDA
+set_location_assignment PIN_A12 -to PHY2_TX_DISABLE
+set_location_assignment PIN_C11 -to PHY2_TX_FAULT
+set_location_assignment PIN_K7 -to PROG_E
+set_location_assignment PIN_J6 -to SPI1_MISO
+set_location_assignment PIN_M8 -to SPI1_MOSI
+set_location_assignment PIN_M7 -to SPI1_NSS
+set_location_assignment PIN_N8 -to SPI1_SCK
+
+set_global_assignment -name ENABLE_OCT_DONE OFF
+set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
+set_global_assignment -name EXTERNAL_FLASH_FALLBACK_ADDRESS 00000000
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name INTERNAL_FLASH_UPDATE_MODE "SINGLE COMP IMAGE"
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_WEAK_PULLUP "AS INPUT TRI-STATED"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name VHDL_FILE CPLDLedCTRL.vhd
+set_global_assignment -name VHDL_FILE MDC_CPLD_Top.vhd
+set_global_assignment -name QSYS_FILE MDC_CPLD_QSys.qsys
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name FLOW_ENABLE_POWER_ANALYZER ON
+set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE "12.5 %"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name AUTO_OPEN_DRAIN_PINS OFF
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to PHY0_NRST
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to PHY1_NRST
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to PHY2_NRST
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE output_files/PHY_MDIO_STP.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/IOCtrl_STP.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/SPI_STP.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/GPIO_STP.stp
+set_location_assignment PIN_L5 -to Test[0]
+set_location_assignment PIN_M4 -to Test[1]
+set_location_assignment PIN_L4 -to Test[2]
+set_location_assignment PIN_M5 -to Test[3]
+set_location_assignment PIN_K5 -to Test[4]
+set_location_assignment PIN_N4 -to Test[5]
+set_location_assignment PIN_J5 -to Test[6]
+set_location_assignment PIN_N12 -to Test[7]
+set_global_assignment -name SIGNALTAP_FILE output_files/PHY_MDIO_STP.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/I2C_STP.stp
+set_location_assignment PIN_L3 -to DebugClk
+set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id MDIO
+set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_BLOCK_TYPE=AUTO" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334528" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INCREMENTAL_ROUTING=1" -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[2] -to MDIO|gnd -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -to MDIO|vcc -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[19] -to MDIO|vcc -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to MDIO|gnd -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to MDIO|gnd -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to MDIO|gnd -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_PIPELINE=0" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_PIPELINE=0" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_COUNTER_PIPELINE=0" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id MDIO
+set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id Optics
+set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to "MDC_CPLD_QSys:U0|MDC_CPLD_QSys_altpll_0:altpll_0|c2" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_BLOCK_TYPE=AUTO" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334529" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INCREMENTAL_ROUTING=1" -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[2] -to Optics|gnd -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[5] -to Optics|vcc -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to Optics|vcc -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[8] -to Optics|vcc -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[11] -to Optics|gnd -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[12] -to Optics|gnd -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[13] -to Optics|gnd -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[15] -to Optics|vcc -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -to Optics|vcc -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to Optics|vcc -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_PIPELINE=0" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_PIPELINE=0" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_COUNTER_PIPELINE=0" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to MDIO|vcc -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[13] -to MDIO|gnd -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[16] -to MDIO|gnd -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to "MDC_CPLD_QSys:U0|MDC_CPLD_QSys_altpll_0:altpll_0|c3" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=8192" -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[1] -to MDIO|vcc -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[9] -to MDIO|gnd -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[10] -to MDIO|vcc -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[23] -to MDIO|gnd -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to MDIO|gnd -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=8192" -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -to Optics|gnd -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to Optics|gnd -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to Optics|gnd -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|Enable" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|EnableStart" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[0]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[3] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[1]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[4] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[2]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[5] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[3]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[6] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[4]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[7] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[5]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[8] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[6]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[9] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[7]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[10] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|State.T1" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[11] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|State.T2" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[12] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|State.T3" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|Enable" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|EnableStart" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[0]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[3] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[1]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[4] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[2]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[5] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[3]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[6] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[4]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[7] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[5]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[8] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[6]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[9] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[7]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[10] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|State.T1" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[11] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|State.T2" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[12] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|State.T3" -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[0] -to Optics|vcc -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -to Optics|vcc -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[7] -to Optics|vcc -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[10] -to Optics|gnd -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[18] -to Optics|gnd -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[23] -to Optics|vcc -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[25] -to Optics|gnd -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to Optics|vcc -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[13] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[0]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[14] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[10]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[15] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[11]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[16] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[12]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[17] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[13]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[18] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[14]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[19] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[15]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[20] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[16]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[21] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[17]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[22] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[18]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[23] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[19]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[24] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[1]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[25] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[20]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[26] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[21]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[27] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[22]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[28] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[23]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[29] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[24]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[30] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[25]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[31] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[26]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[32] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[27]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[33] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[28]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[34] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[29]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[35] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[2]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[36] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[30]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[37] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[31]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[38] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[3]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[39] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[4]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[40] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[5]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[41] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[6]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[42] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[7]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[43] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[8]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[44] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[9]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[45] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[0]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[46] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[10]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[47] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[11]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[48] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[12]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[49] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[13]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[50] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[14]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[51] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[15]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[52] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[16]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[53] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[17]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[54] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[18]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[55] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[19]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[56] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[1]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[57] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[20]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[58] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[21]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[59] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[22]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[60] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[23]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[61] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[24]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[62] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[25]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[63] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[26]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[64] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[27]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[65] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[28]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[66] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[29]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[67] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[2]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[68] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[30]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[69] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[31]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[70] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[3]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[71] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[4]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[72] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[5]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[73] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[6]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[74] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[7]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[75] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[8]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[76] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[9]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[77] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_read_n" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[78] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[0]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[79] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[10]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[80] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[11]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[81] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[12]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[82] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[13]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[83] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[14]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[84] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[15]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[85] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[16]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[86] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[17]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[87] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[18]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[88] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[19]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[89] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[1]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[90] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[20]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[91] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[21]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[92] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[22]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[93] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[23]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[94] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[24]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[95] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[25]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[96] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[26]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[97] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[27]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[98] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[28]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[99] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[29]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[100] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[2]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[101] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[30]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[102] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[31]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[103] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[3]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[104] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[4]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[105] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[5]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[106] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[6]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[107] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[7]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[108] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[8]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[109] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[9]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[110] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdatavalid" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[111] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_waitrequest" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[112] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_write_n" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[113] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[0]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[114] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[10]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[115] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[11]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[116] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[12]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[117] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[13]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[118] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[14]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[119] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[15]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[120] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[16]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[121] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[17]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[122] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[18]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[123] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[19]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[124] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[1]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[125] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[20]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[126] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[21]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[127] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[22]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[128] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[23]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[129] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[24]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[130] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[25]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[131] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[26]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[132] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[27]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[133] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[28]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[134] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[29]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[135] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[2]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[136] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[30]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[137] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[31]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[138] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[3]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[139] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[4]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[140] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[5]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[141] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[6]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[142] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[7]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[143] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[8]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[144] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[9]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[145] -to PHY0_RX_LOS -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[146] -to PHY0_TX_DISABLE -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[147] -to PHY0_TX_FAULT -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[148] -to PHY1_RX_LOS -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[149] -to PHY1_TX_DISABLE -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[150] -to PHY1_TX_FAULT -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[151] -to PHY2_RX_LOS -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[152] -to PHY2_TX_DISABLE -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[153] -to PHY2_TX_FAULT -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[13] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[0]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[14] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[10]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[15] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[11]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[16] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[12]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[17] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[13]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[18] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[14]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[19] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[15]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[20] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[16]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[21] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[17]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[22] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[18]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[23] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[19]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[24] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[1]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[25] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[20]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[26] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[21]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[27] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[22]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[28] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[23]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[29] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[24]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[30] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[25]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[31] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[26]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[32] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[27]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[33] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[28]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[34] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[29]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[35] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[2]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[36] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[30]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[37] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[31]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[38] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[3]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[39] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[4]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[40] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[5]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[41] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[6]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[42] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[7]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[43] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[8]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[44] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|WaitCounter[9]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[45] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[0]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[46] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[10]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[47] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[11]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[48] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[12]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[49] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[13]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[50] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[14]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[51] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[15]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[52] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[16]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[53] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[17]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[54] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[18]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[55] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[19]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[56] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[1]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[57] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[20]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[58] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[21]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[59] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[22]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[60] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[23]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[61] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[24]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[62] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[25]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[63] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[26]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[64] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[27]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[65] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[28]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[66] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[29]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[67] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[2]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[68] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[30]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[69] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[31]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[70] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[3]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[71] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[4]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[72] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[5]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[73] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[6]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[74] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[7]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[75] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[8]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[76] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_address[9]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[77] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_read_n" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[78] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[0]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[79] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[10]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[80] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[11]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[81] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[12]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[82] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[13]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[83] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[14]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[84] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[15]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[85] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[16]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[86] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[17]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[87] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[18]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[88] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[19]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[89] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[1]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[90] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[20]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[91] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[21]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[92] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[22]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[93] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[23]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[94] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[24]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[95] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[25]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[96] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[26]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[97] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[27]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[98] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[28]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[99] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[29]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[100] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[2]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[101] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[30]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[102] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[31]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[103] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[3]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[104] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[4]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[105] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[5]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[106] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[6]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[107] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[7]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[108] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[8]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[109] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdata[9]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[110] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_readdatavalid" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[111] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_waitrequest" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[112] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_write_n" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[113] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[0]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[114] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[10]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[115] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[11]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[116] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[12]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[117] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[13]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[118] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[14]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[119] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[15]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[120] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[16]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[121] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[17]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[122] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[18]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[123] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[19]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[124] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[1]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[125] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[20]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[126] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[21]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[127] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[22]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[128] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[23]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[129] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[24]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[130] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[25]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[131] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[26]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[132] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[27]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[133] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[28]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[134] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[29]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[135] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[2]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[136] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[30]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[137] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[31]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[138] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[3]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[139] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[4]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[140] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[5]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[141] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[6]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[142] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[7]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[143] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[8]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[144] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|avm_m0_writedata[9]" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[145] -to PHY0_RX_LOS -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[146] -to PHY0_TX_DISABLE -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[147] -to PHY0_TX_FAULT -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[148] -to PHY1_RX_LOS -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[149] -to PHY1_TX_DISABLE -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[150] -to PHY1_TX_FAULT -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[151] -to PHY2_RX_LOS -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[152] -to PHY2_TX_DISABLE -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[153] -to PHY2_TX_FAULT -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=154" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=154" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=154" -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[1] -to Optics|vcc -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[3] -to Optics|gnd -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[9] -to Optics|vcc -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[14] -to Optics|vcc -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[19] -to Optics|gnd -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[21] -to Optics|vcc -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to Optics|gnd -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to Optics|vcc -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=485" -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=512" -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[16] -to Optics|gnd -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[22] -to Optics|gnd -section_id Optics
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[24] -to Optics|gnd -section_id Optics
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=512" -section_id Optics
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[0]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[1]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[2]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[3] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[3]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[4] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[4]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[5] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[5]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[6] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[6]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[7] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[7]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[8] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|State.T1" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[9] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|State.T2" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[10] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|State.T3" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[11] -to "MDC_CPLD_QSys:U0|MDIOCtrl:mdioctrl_0|MDCEn" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[0]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[1]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[2]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[3] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[3]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[4] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[4]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[5] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[5]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[6] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[6]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[7] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|ProgCounter[7]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[8] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|State.T1" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[9] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|State.T2" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[10] -to "MDC_CPLD_QSys:U0|AvalonMaster_AltInit:avalonmaster_altinit_0|State.T3" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[11] -to "MDC_CPLD_QSys:U0|MDIOCtrl:mdioctrl_0|MDCEn" -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[0] -to MDIO|gnd -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[3] -to MDIO|vcc -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[7] -to MDIO|gnd -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[11] -to MDIO|vcc -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[14] -to MDIO|vcc -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[15] -to MDIO|vcc -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -to MDIO|gnd -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[21] -to MDIO|vcc -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[22] -to MDIO|gnd -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[24] -to MDIO|vcc -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[5] -to MDIO|vcc -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[8] -to MDIO|vcc -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[18] -to MDIO|gnd -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[12] -to "MDC_CPLD_QSys:U0|MDIOCtrl:mdioctrl_0|State[0]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[13] -to "MDC_CPLD_QSys:U0|MDIOCtrl:mdioctrl_0|State[1]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[14] -to "MDC_CPLD_QSys:U0|MDIOCtrl:mdioctrl_0|State[2]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[15] -to "MDC_CPLD_QSys:U0|MDIOCtrl:mdioctrl_0|State[3]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[16] -to PHY0_MDC -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[17] -to PHY0_MDIO -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[18] -to PHY1_MDC -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[19] -to PHY1_MDIO -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[20] -to PHY2_MDC -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[21] -to PHY2_MDIO -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[22] -to ResetFlags[0] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[23] -to ResetFlags[1] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[24] -to ResetFlags[2] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[25] -to ResetFlags[3] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[26] -to ResetFlags[4] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[27] -to ResetFlags[5] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[28] -to ResetFlags[6] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[12] -to "MDC_CPLD_QSys:U0|MDIOCtrl:mdioctrl_0|State[0]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[13] -to "MDC_CPLD_QSys:U0|MDIOCtrl:mdioctrl_0|State[1]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[14] -to "MDC_CPLD_QSys:U0|MDIOCtrl:mdioctrl_0|State[2]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[15] -to "MDC_CPLD_QSys:U0|MDIOCtrl:mdioctrl_0|State[3]" -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[16] -to PHY0_MDC -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[17] -to PHY0_MDIO -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[18] -to PHY1_MDC -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[19] -to PHY1_MDIO -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[20] -to PHY2_MDC -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[21] -to PHY2_MDIO -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[22] -to ResetFlags[0] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[23] -to ResetFlags[1] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[24] -to ResetFlags[2] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[25] -to ResetFlags[3] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[26] -to ResetFlags[4] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[27] -to ResetFlags[5] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[28] -to ResetFlags[6] -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -to MDIO|gnd -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[25] -to MDIO|gnd -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to MDIO|gnd -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to MDIO|vcc -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[29] -to TVPResetCo[0] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[30] -to TVPResetCo[10] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[31] -to TVPResetCo[11] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[32] -to TVPResetCo[12] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[33] -to TVPResetCo[13] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[34] -to TVPResetCo[14] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[35] -to TVPResetCo[15] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[36] -to TVPResetCo[1] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[37] -to TVPResetCo[2] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[38] -to TVPResetCo[3] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[39] -to TVPResetCo[4] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[40] -to TVPResetCo[5] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[41] -to TVPResetCo[6] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[42] -to TVPResetCo[7] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[43] -to TVPResetCo[8] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[44] -to TVPResetCo[9] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[29] -to TVPResetCo[0] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[30] -to TVPResetCo[10] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[31] -to TVPResetCo[11] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[32] -to TVPResetCo[12] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[33] -to TVPResetCo[13] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[34] -to TVPResetCo[14] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[35] -to TVPResetCo[15] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[36] -to TVPResetCo[1] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[37] -to TVPResetCo[2] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[38] -to TVPResetCo[3] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[39] -to TVPResetCo[4] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[40] -to TVPResetCo[5] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[41] -to TVPResetCo[6] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[42] -to TVPResetCo[7] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[43] -to TVPResetCo[8] -section_id MDIO
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[44] -to TVPResetCo[9] -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=45" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=45" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=45" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" -section_id MDIO
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=162" -section_id MDIO
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[12] -to MDIO|gnd -section_id MDIO
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SLD_FILE db/PHY_MDIO_STP_auto_stripped.stp
