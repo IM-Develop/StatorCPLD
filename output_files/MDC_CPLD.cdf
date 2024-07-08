@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M16SCU169) Path("C:/Project/2020/Refael/Lightning/Vhdl/MDC_CPLD/Ver01/output_files/") File("MDC_CPLD.pof") MfrSpec(OpMask(3) Child_OpMask(2 3 3));
+		Device PartName(10M16SCU169) Path("C:/Project/IM_Git_Projects/Refael/MDC_CPLD/output_files/") File("MDC_CPLD.pof") MfrSpec(OpMask(3) Child_OpMask(2 3 3));
 
 ChainEnd;
 

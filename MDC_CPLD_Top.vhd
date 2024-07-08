@@ -23,8 +23,6 @@ entity MDC_CPLD_Top is
 		 PHY_2P0V_EN		: buffer std_logic;
 		 PHY_2P5V_EN		: buffer std_logic;
 --*********************** Global signals *****************************************
-		 -- PHY0_MDC			: in std_logic;
-		 -- PHY0_MDIO			: in std_logic;
 		 PHY0_MDC			: buffer std_logic;
 		 PHY0_MDIO			: inout std_logic;
 		 PHY0_NINT			: in std_logic;
@@ -35,8 +33,6 @@ entity MDC_CPLD_Top is
 		 PHY0_TX_DISABLE	: out std_logic;
 		 PHY0_TX_FAULT		: in std_logic;
 --*********************** Global signals *****************************************
-		 -- PHY1_MDC			: in std_logic;
-		 -- PHY1_MDIO			: in std_logic;
 		 PHY1_MDC			: buffer std_logic;
 		 PHY1_MDIO			: inout std_logic;
 		 PHY1_NINT			: in std_logic;
@@ -47,8 +43,6 @@ entity MDC_CPLD_Top is
 		 PHY1_TX_DISABLE	: out std_logic;
 		 PHY1_TX_FAULT		: in std_logic;
 --*********************** Global signals *****************************************
-		 -- PHY2_MDC			: in std_logic;
-		 -- PHY2_MDIO			: in std_logic;
 		 PHY2_MDC			: buffer std_logic;
 		 PHY2_MDIO			: inout std_logic;
 		 PHY2_NINT			: in std_logic;
